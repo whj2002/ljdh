@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+    <title>
+        第一个难看的动画
+    </title>
+    <style>
+        #a{
+            width: 560px;
+            height: 400px;
+            position:relative;
+            background-color: yellow;
+        }
+        #b{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="b1(),b3()">start</button><br /><br />
+
+    <div id="a"><div id="b"></div></div>
+    <script>
+        function b1(){
+            var a1 = document.getElementById("b");
+            var pos = 0;
+            var id = setInterval(frame,5);
+            function frame(){
+                if (pos == 510) {clearInterval(id);b2()} 
+                else {
+                  pos++; 
+                  a1.style.left = pos + "px"; 
+                }
+            }
+        }
+        function b2(){
+            var a1 = document.getElementById("b");
+            var pos = 0;
+            var id = setInterval(frame,5);
+            function frame(){
+                if (pos == 510) {clearInterval(id);b1()} 
+                else {
+                  pos++; 
+                  a1.style.left = 510 - pos + "px"; 
+                }
+            }
+        }
+        function b3(){
+            var a1 = document.getElementById("b");
+            var pos = 0;
+            var id = setInterval(frame,5);
+            function frame(){
+                if (pos == 350) {clearInterval(id);b4()} 
+                else {
+                  pos++; 
+                  a1.style.top = pos + "px"; 
+                }
+            }
+        }
+        function b4(){
+            var a1 = document.getElementById("b");
+            var pos = 0;
+            var id = setInterval(frame,5);
+            function frame(){
+                if (pos == 350) {clearInterval(id);b3()} 
+                else {
+                  pos++; 
+                  a1.style.top = 350 - pos + "px"; 
+                }
+            }
+        }
+    </script>
+</body>
+</html>
