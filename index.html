@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-    <button onclick="b1(),b3()">start</button><br /><br />
+    <button onclick="b1(),b3(),b5()" id="button">start</button><br /><br />
 
     <div id="a"><div id="b"></div></div>
     <script>
@@ -72,6 +72,10 @@
                   a1.style.top = 350 - pos + "px"; 
                 }
             }
+        }
+        function b5()
+        {
+            document.getElementById("button").setAttribute("disabled", true)
         }
     </script>
 </body>
